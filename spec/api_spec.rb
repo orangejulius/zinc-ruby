@@ -30,7 +30,7 @@ module Zinc
 
 			context "create object with params" do
 				before(:each) do
-					expects = {:user => Zinc.api_key, :method => :post, :url => Zinc::Order.url, :payload => test_order_create}
+					expects = {:user => Zinc.api_key, :method => :post, :url => Zinc::Order.url, :payload => test_order_create.to_json}
 					@mock.should_receive(:post).once.with(expects).and_return(test_response(test_order_response))
 					@order = Zinc::Order.create(test_order_create)
 				end
