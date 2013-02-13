@@ -10,6 +10,10 @@ module Zinc
 			it "returns an Order object when a create class method is called" do
 				Zinc::Order.create.class.should == Zinc::Order
 			end
+
+			it "returns full API url through self.url" do
+				Zinc::Order.url.should == 'https://api.zinc.io/v1/orders/'
+			end
 		end
 	end
 end

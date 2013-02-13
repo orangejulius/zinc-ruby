@@ -46,10 +46,6 @@ module Zinc
 				it "request sends API key as user" do
 				end
 			end
-
-			it "returns full API url through self.url" do
-				Zinc::Order.url.should == 'https://api.zinc.io/v1/order/'
-			end
 		end
 	end
 end
