@@ -18,6 +18,10 @@ module Zinc
 				@mock.should_receive(:get).never
 				Zinc::Order.create
 			end
+
+			it "returns full API url through self.url" do
+				Zinc::Order.url.should == 'https://api.zinc.io/v1/order/'
+			end
 		end
 	end
 end
