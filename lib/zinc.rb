@@ -1,5 +1,7 @@
 require 'zinc/order'
 
+require 'zinc/errors/authentication_error'
+
 module Zinc
 	@@url_base = 'https://api.zinc.io/v1/'
 
