@@ -1,3 +1,4 @@
+require 'json'
 require 'rest_client'
 
 require 'zinc/order'
@@ -31,7 +32,7 @@ module Zinc
 			:method => method,
 			:user => api_key,
 			:url => url,
-			:payload => params,
+			:payload => params.to_json,
 		}
 		execute_request(opts)
 	end
