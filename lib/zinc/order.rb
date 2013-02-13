@@ -10,7 +10,7 @@ module Zinc
 		end
 
 		def self.url
-			Zinc.url_base+self.name.split('::')[-1].downcase+'/'
+			Zinc.url_base+'orders/'
 		end
 
 		def set_values(values)
