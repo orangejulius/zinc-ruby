@@ -1,3 +1,5 @@
+require 'rest_client'
+
 require 'zinc/order'
 
 require 'zinc/errors/authentication_error'
@@ -31,5 +33,9 @@ module Zinc
 			:params => params,
 		}
 		execute_request(opts)
+	end
+
+	def self.execute_request(opts)
+		RestClient::Request.execute(opts)
 	end
 end
