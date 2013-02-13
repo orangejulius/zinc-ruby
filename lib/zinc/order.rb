@@ -1,6 +1,9 @@
 module Zinc
 	class Order
-		def self.create
+		def self.create(params = {})
+			if params != {}
+				response = Zinc.request(:post, url, params)
+			end
 			Order.new
 		end
 
