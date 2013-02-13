@@ -17,9 +17,8 @@ class TestResponse
 	attr_accessor :code, :body
 end
 
-def test_response(body, code = 200)
-	response = TestResponse.new
-	response.code = code
-	response.body = body
-	response
+def test_response(body)
+	if body.class == Hash
+		body.to_json.to_s
+	end
 end

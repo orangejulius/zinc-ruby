@@ -4,7 +4,7 @@ module Zinc
 			o = Order.new
 			response = Zinc.request(:post, url, params)
 			if response
-				o.set_values(response.body)
+				o.set_values(response)
 			end
 			o
 		end
@@ -20,9 +20,9 @@ module Zinc
 		def method_missing(name, *args)
 			@values ||= {}
 			if name.to_s.end_with?('=')
-				@values[name] = args[0]
+				@values[name.to_s] = args[0]
 			else
-				@values[name]
+				@values[name.to_s]
 			end
 		end
 

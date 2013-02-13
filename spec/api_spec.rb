@@ -14,11 +14,10 @@ describe Zinc do
 		end
 
 		it "returns a response object when Zinc.request called" do
-			data = {:foo => "bar"}
+			data = {'foo' => "bar"}
 			@mock.should_receive(:post).once.and_return(test_response(data))
 			response = Zinc.request(:post, Zinc::Order.url, data)
-			response.code.should == 200
-			response.body.should == data
+			response.should == data
 		end
 
 		context "create object with params" do

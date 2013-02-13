@@ -34,7 +34,8 @@ module Zinc
 			:url => url,
 			:payload => params.to_json,
 		}
-		execute_request(opts)
+		response = execute_request(opts)
+		return JSON.parse(response)
 	end
 
 	def self.execute_request(opts)
