@@ -33,7 +33,8 @@ module Zinc
 					@order = Zinc::Order.create(test_order_create)
 				end
 
-				it "sends a post request"
+				it "sends a post request"do
+				end
 
 				it "returns an order object with accessible attributes" do
 					@order.merchant.should == test_order_response[:merchant]
