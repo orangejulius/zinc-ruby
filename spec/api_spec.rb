@@ -11,6 +11,7 @@ module Zinc
 		context "API Bindings" do
 			before(:each) do
 				@mock = mock
+				Zinc.api_key = 'foo'
 				Zinc.mock_rest_client = @mock
 			end
 
