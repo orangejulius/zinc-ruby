@@ -29,6 +29,7 @@ module Zinc
 
 		opts = {
 			:method => method,
+			:user => api_key,
 			:url => url,
 			:params => params,
 		}
