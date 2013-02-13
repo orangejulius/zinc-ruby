@@ -1,8 +1,8 @@
 module Zinc
 	def self.execute_request(opts)
 		case opts[:method]
-		when :post then @mock_rest_client.post opts[:url], opts[:payload]
-		when :get then @mock_rest_client.get opts[:url], opts[:payload]
+		when :post then @mock_rest_client.post opts
+		when :get then @mock_rest_client.get opts
 		end
 	end
 end
