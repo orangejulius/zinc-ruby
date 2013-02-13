@@ -12,7 +12,7 @@ module Zinc
 			end
 
 			it "returns full API url through self.url" do
-				Zinc::Order.url.should == 'https://api.zinc.io/v1/orders/'
+				Zinc::Order.url.should == 'https://api.zinc.io/v1/orders'
 			end
 		end
 	end
