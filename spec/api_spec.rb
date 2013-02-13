@@ -30,7 +30,8 @@ module Zinc
 
 			context "create object with params" do
 				before(:each) do
-					@mock.should_receive(:post).once.and_return(test_response(test_order_response))
+					expects = {:user => Zinc.api_key, :method => :post, :url => Zinc::Order.url, :params => test_order_create}
+					@mock.should_receive(:post).once.with(expects).and_return(test_response(test_order_response))
 					@order = Zinc::Order.create(test_order_create)
 				end
 
@@ -40,6 +41,9 @@ module Zinc
 				it "returns an order object with accessible attributes" do
 					@order.merchant.should == test_order_response[:merchant]
 					@order.created_date.should == test_order_response[:created_date]
+				end
+
+				it "request sends API key as user" do
 				end
 			end
 
