@@ -14,4 +14,13 @@ module Zinc
 	def self.url_base
 		@@url_base
 	end
+
+	def self.request(method, url, params)
+		opts = {
+			:method => method,
+			:url => url,
+			:params => params,
+		}
+		execute_request(opts)
+	end
 end
