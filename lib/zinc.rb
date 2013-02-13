@@ -19,6 +19,12 @@ module Zinc
 	end
 
 	def self.request(method, url, params)
+		raise AuthenticationError unless api_key
+
+		if method == :post and params == {}
+			return
+		end
+
 		opts = {
 			:method => method,
 			:url => url,
