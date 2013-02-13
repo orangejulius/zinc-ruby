@@ -31,7 +31,7 @@ module Zinc
 			:method => method,
 			:user => api_key,
 			:url => url,
-			:params => params,
+			:payload => params,
 		}
 		execute_request(opts)
 	end
