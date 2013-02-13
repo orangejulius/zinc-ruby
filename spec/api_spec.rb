@@ -27,6 +27,20 @@ module Zinc
 				response.body.should == data
 			end
 
+			context "create object with params" do
+				before(:each) do
+					@mock.should_receive(:post).once.and_return(test_response(test_order_response))
+					@order = Zinc::Order.create(test_order_create)
+				end
+
+				it "sends a post request"
+
+				it "returns an order object with accessible attributes" do
+					@order.merchant.should == test_order_response[:merchant]
+					@order.created_date.should == test_order_response[:created_date]
+				end
+			end
+
 			it "returns full API url through self.url" do
 				Zinc::Order.url.should == 'https://api.zinc.io/v1/order/'
 			end
