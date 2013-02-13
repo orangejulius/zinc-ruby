@@ -19,6 +19,14 @@ module Zinc
 				Zinc::Order.create
 			end
 
+			it "returns a response object when Zinc.request called" do
+				data = {:foo => "bar"}
+				@mock.should_receive(:post).once.and_return(test_response(data))
+				response = Zinc.request(:post, Zinc::Order.url, data)
+				response.code.should == 200
+				response.body.should == data
+			end
+
 			it "returns full API url through self.url" do
 				Zinc::Order.url.should == 'https://api.zinc.io/v1/order/'
 			end
