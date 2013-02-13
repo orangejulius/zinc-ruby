@@ -10,6 +10,6 @@ spec = Gem::Specification.new do |s|
 	s.add_development_dependency('rake')
 
 	s.files = `git ls-files`.split("\n")
-	s.test_files    = `git ls-files -- test/*`.split("\n")
+	s.test_files    = `git ls-files -- spec/*`.split("\n")
 	s.require_paths = ['lib']
 end
