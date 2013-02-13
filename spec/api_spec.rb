@@ -14,7 +14,7 @@ module Zinc
 				Zinc.mock_rest_client = @mock
 			end
 
-			it "doesn't use the network when creating a new Order" do
+			it "doesn't use the network when creating a new Order object" do
 				@mock.should_receive(:get).never
 				Zinc::Order.create
 			end
