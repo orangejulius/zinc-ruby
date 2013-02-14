@@ -38,5 +38,17 @@ describe Zinc do
 			it "request sends API key as user" do
 			end
 		end
+
+		context "get existing object" do
+			it "returns an order object when get called with id" do
+				id = test_order_response[:id]
+				expects = {:url => Zinc::Order.url+'/'+id, :user => Zinc.api_key, :method => :get, :payload => {}.to_s}
+				@mock.should_receive(:get).once.with(expects).and_return(test_response(test_order_response))
+				@order = Zinc::Order.get(id)
+
+				@order.id.should == id
+				@order.merchant.should == test_order_response[:merchant]
+			end
+		end
 	end
 end
