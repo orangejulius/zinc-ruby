@@ -9,6 +9,15 @@ module Zinc
 			o
 		end
 
+		def self.get(id)
+			o = Order.new
+			response = Zinc.request(:get, url+'/'+id, {})
+			if response
+				o.set_values(response)
+			end
+			o
+		end
+
 		def self.url
 			Zinc.url_base+'orders'
 		end
