@@ -1,0 +1,36 @@
+= Zinc Ruby Bindings
+
+== Introduction
+Ruby bindings for the {Zinc}[https://zinc.io] API
+
+Heavily inspired by the {Stripe Ruby Bindings}[https://github.com/stripe/stripe-ruby]
+
+By Julian Simioni
+
+== Usage
+
+   Zinc.api_key = "your-api-key" # set the API key first
+
+   new_order = Zinc::Order.create({:address => {
+        :name =>"Tim Beaver",
+        :address_line1 => "77 Massachusetts Avenue",
+        :zip_code => "02139",
+        :city": "Cambridge",
+        :state": "MA",
+        :country": "US"
+     },
+     :address_suggestion_choice => "suggested",
+     :products => [
+        {
+           :pid => "B003L1ZYYM",
+           :pid_type => "ASIN",
+        },
+        {
+           :pid => "0833030477",
+           :pid_type => "ASIN",
+        }
+     ]})
+
+
+     # all parameters returned by the {Zinc API}[https://zinc.io/docs] can be used as accessors
+     puts new_order.ship_date_estimate # => 1336120454
