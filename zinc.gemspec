@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s|
 	s.name = 'zinc'
-	s.version = '0.0.1'
+	s.version = '0.1.0'
 	s.summary = 'Ruby bindings for the Zinc(https://zinc.io) API'
 	s.description = s.summary
 	s.authors = ['Julian Simioni']
