@@ -2,16 +2,18 @@ require 'spec_helper'
 
 module Zinc
 	describe Zinc do
-		before(:each) do
+		before do
 			Zinc.api_key = 'foo'
 		end
 
-		context "Order object" do
-			it "returns an Order object when a create class method is called" do
-				Zinc::Order.create.class.should == Zinc::Order
+		describe "creating an order" do
+			it "returns an Order" do
+				Zinc::Order.create.should be_a(Zinc::Order)
 			end
+		end
 
-			it "returns full API url through self.url" do
+		describe 'getting the API url' do
+			it "returns the correct url" do
 				Zinc::Order.url.should == 'https://api.zinc.io/v1/orders'
 			end
 		end
