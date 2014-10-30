@@ -12,12 +12,12 @@ By Julian Simioni
    Zinc.api_key = "your-api-key" # set the API key first
 
    new_order = Zinc::Order.create({:address => {
-        :name =>"Tim Beaver",
-        :address_line1 => "77 Massachusetts Avenue",
-        :zip_code => "02139",
-        :city": "Cambridge",
-        :state": "MA",
-        :country": "US"
+        name: "Tim Beaver",
+        address_line1: "77 Massachusetts Avenue",
+        zip_code: "02139",
+        city: "Cambridge",
+        state: "MA",
+        country: "US"
      },
      :address_suggestion_choice => "suggested",
      :products => [
